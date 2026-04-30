@@ -96,6 +96,33 @@ a {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 .hero-section {
   padding: 4.5rem 0 3rem;
 }
@@ -499,24 +526,58 @@ a {
   .card-grid,
   .benefit-list {
     grid-template-columns: 1fr;
-  }
-  .presentation-card {
+  }  .presentation-card {
     grid-template-columns: 1fr;
   }
 }
 @media (max-width: 700px) {
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
+  }
+  .nav-toggle {
+    display: flex;
   }
   .main-nav {
-    width: 100%;
-    justify-content: flex-start;
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
+    z-index: 100;
+  }
+  .main-nav.open {
+    display: flex;
+  }
+  .main-nav a {
+    padding: 0.85rem 1.5rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    font-size: 1rem;
+  }
+  .main-nav a.active {
+    border-left-color: var(--accent);
+    border-bottom: none;
+    background: rgba(227, 111, 26, 0.05);
+  }
+  .brand span:last-child {
+    font-size: 0.85rem;
   }
   .hero-section {
-    padding-top: 3rem;
+    padding-top: 2.5rem;
+  }
+  .hero-image {
+    display: none;
   }
   .hero-actions {
     flex-direction: column;
+  }
+  .section {
+    padding: 3rem 0;
   }
 }
