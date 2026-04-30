@@ -175,23 +175,21 @@
       </section>
 
       <section id="contact" class="section contact-section">
+        <div class="container contact-header">
+          <h2>Richiedi un confronto</h2>
+          <p>Compila il form per ricevere maggiori informazioni sui servizi Meta o per organizzare un primo approfondimento con il nostro team.</p>
+        </div>
         <div class="container contact-grid">
-          <div class="contact-panel">
-            <p class="section-label">Contatti</p>
-            <h2>Richiedi un confronto</h2>
-            <p>Compila il form per ricevere maggiori informazioni sui servizi Meta o per organizzare un primo approfondimento con il nostro team.</p>
-            <a class="btn btn-primary" href="mailto:info@example.com?subject=Richiesta%20confronto%20Meta%20Advisory">Invia richiesta</a>
-          </div>
-          <form class="contact-form" action="mailto:info@example.com" method="post" enctype="text/plain">
-            <label for="name">Nome e Cognome</label>
+          <form class="contact-form" action="mailto:info@meta-advisory.it" method="post" enctype="text/plain">
+            <label for="name">Nome e Cognome *</label>
             <input id="name" name="Nome e Cognome" type="text" placeholder="Nome e cognome" required />
-            <label for="company">Istituto / Società</label>
+            <label for="company">Istituto / Società *</label>
             <input id="company" name="Istituto / Società" type="text" placeholder="Istituto o società" required />
             <label for="role">Ruolo aziendale</label>
-            <input id="role" name="Ruolo aziendale" type="text" placeholder="Ruolo in azienda" required />
-            <label for="email">Email</label>
+            <input id="role" name="Ruolo aziendale" type="text" placeholder="Ruolo aziendale" />
+            <label for="email">Email *</label>
             <input id="email" name="Email" type="email" placeholder="La tua email" required />
-            <label for="interest">Area di interesse</label>
+            <label for="interest">Area di interesse *</label>
             <select id="interest" name="Area di interesse" required>
               <option value="">Seleziona un'area</option>
               <option value="DORA & ICT Risk">DORA & ICT Risk</option>
@@ -203,9 +201,24 @@
               <option value="Altro">Altro</option>
             </select>
             <label for="message">Messaggio</label>
-            <textarea id="message" name="Messaggio" rows="5" placeholder="Descrivi il progetto o la richiesta" required></textarea>
+            <textarea id="message" name="Messaggio" rows="5" placeholder="Descrivi brevemente la richiesta o l’ambito di interesse"></textarea>
             <button type="submit" class="btn btn-primary">Invia richiesta</button>
           </form>
+          <aside class="company-data">
+            <div class="company-card">
+              <h3>Meta Advisory & Tech Services S.r.l</h3>
+              <p>Supportiamo banche e intermediari finanziari nei processi di compliance normativa, risk governance e controlli interni.</p>
+              <div class="company-details">
+                <p><strong>Email:</strong> info@meta-advisory.it</p>
+                <p><strong>PEC:</strong> meta@arubapec.it</p>
+                <p><strong>Sede legale:</strong> [indirizzo]</p>
+                <p><strong>P. IVA:</strong> XXXXXXXX</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="container contact-disclaimer">
+          <p>I dati trasmessi saranno trattati esclusivamente per la gestione della richiesta, nel rispetto della normativa vigente in materia di protezione dei dati personali. <a href="#">Informativa Privacy</a>.</p>
         </div>
       </section>
     </main>

@@ -283,30 +283,45 @@ a {
 .benefit-card {
   min-height: 12rem;
 }
+.contact-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 2.5rem;
+}
+.contact-header h2 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.contact-header p {
+  margin: 1.25rem auto 0;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 680px;
+}
 .contact-grid {
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
+  gap: 3.75rem;
+  align-items: start;
 }
-.contact-panel {
-  display: grid;
-  gap: 1.5rem;
-  text-align: left;
-  align-items: flex-start;
-}
-.contact-panel img {
-  display: none;
+.contact-form,
+.company-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 1.5rem;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
 }
 .contact-form {
   display: grid;
   gap: 1rem;
-  background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 1.5rem;
-  padding: 2rem;
 }
 .contact-form label {
-  color: var(--brand);
+  font-size: 14px;
   font-weight: 600;
+  color: var(--brand);
 }
 .contact-form input,
 .contact-form textarea,
@@ -314,16 +329,75 @@ a {
   width: 100%;
   padding: 1rem 1rem;
   border-radius: 1rem;
-  border: 1px solid rgba(16, 22, 40, 0.12);
-  background: #F8F9FA;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
   color: var(--brand);
+  font-size: 16px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: #E46F1B;
+  box-shadow: 0 0 0 4px rgba(228, 111, 26, 0.12);
 }
 .contact-form textarea {
-  min-height: 12rem;
+  min-height: 240px;
   resize: vertical;
 }
 .contact-form select {
   appearance: none;
+}
+.contact-form button {
+  width: fit-content;
+  padding: 1rem 1.75rem;
+  border-radius: 999px;
+  border: none;
+  background: #E46F1B;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.contact-form button:hover,
+.contact-form button:focus {
+  background: #C85F12;
+}
+.company-data {
+  display: grid;
+}
+.company-card h3 {
+  margin-top: 0;
+  font-size: 1.55rem;
+  color: var(--brand);
+}
+.company-card p {
+  margin: 1rem 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 16px;
+}
+.company-details p {
+  margin: 0.75rem 0;
+  color: var(--brand);
+  line-height: 1.75;
+  font-size: 15px;
+}
+.company-details strong {
+  color: var(--brand);
+  font-weight: 700;
+}
+.contact-disclaimer {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.contact-disclaimer p {
+  margin: 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.contact-disclaimer a {
+  color: #0A1628;
+  text-decoration: underline;
 }
 
 .site-footer {
