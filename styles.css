@@ -284,10 +284,12 @@ a {
 .contact-panel {
   display: grid;
   gap: 1.5rem;
-  text-align: left;
+  text-align: center;
+  align-items: center;
 }
 .contact-panel img {
-  width: 2.4rem;
+  width: 5rem;
+  margin: 0 auto;
 }
 .contact-form {
   display: grid;
