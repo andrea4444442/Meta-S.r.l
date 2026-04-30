@@ -35,17 +35,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        const active = document.querySelector(`.main-nav a[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
+  function updateActiveNav() {
+    const scrollY = window.scrollY;
+    let current = '';
+
+    sections.forEach(section => {
+      if (scrollY >= section.offsetTop - 120) {
+        current = section.getAttribute('id');
       }
     });
-  }, {
-    rootMargin: '-40% 0px -55% 0px'
-  });
 
-  sections.forEach(section => observer.observe(section));
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
 });
