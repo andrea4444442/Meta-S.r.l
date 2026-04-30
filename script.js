@@ -31,29 +31,36 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.setAttribute('aria-hidden', 'true');
   }
 
-  // Hamburger menu
-  const navToggle = document.querySelector('.nav-toggle');
-  const mainNav = document.querySelector('.main-nav');
+  // Sidebar mobile (aperta dal logo)
+  const sidebar = document.getElementById('navSidebar');
+  const brand = document.querySelector('.brand');
 
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      navToggle.classList.toggle('open', isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
+  function openSidebar() {
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
   }
 
-  // Active nav link on scroll
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden', 'true');
+  }
+
+  brand.addEventListener('click', (e) => {
+    if (window.innerWidth <= 700) {
+      e.preventDefault();
+      openSidebar();
+    }
+  });
+
+  sidebar.querySelector('.nav-sidebar-backdrop').addEventListener('click', closeSidebar);
+
+  sidebar.querySelectorAll('.nav-sidebar-links a').forEach(link => {
+    link.addEventListener('click', closeSidebar);
+  });
+
+  // Active nav link on scroll (desktop + sidebar)
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+  const navLinks = document.querySelectorAll('.main-nav a[href^="#"], .nav-sidebar-links a[href^="#"]');
 
   function updateActiveNav() {
     const scrollY = window.scrollY;
