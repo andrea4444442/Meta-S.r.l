@@ -255,7 +255,18 @@ a {
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-.presentation-card > div {
+.presentation-card-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.presentation-card-header img {
+  width: 2.4rem;
+  height: auto;
+}
+.presentation-card > div,
+.presentation-card-header > div {
   display: grid;
   gap: 0.75rem;
 }
@@ -264,6 +275,15 @@ a {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
+}
+.btn-tertiary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-tertiary:hover,
+.btn-tertiary:focus {
+  background: rgba(227, 111, 26, 0.08);
 }
 .why-section {
   background: #F7F8FB;
