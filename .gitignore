@@ -10,6 +10,7 @@ yarn-error.log*
 *.pptx
 *.pptm
 !Meta_Piano_Industriale_2026-2028_NUOVO TEMA.pptx
+!META copy.pptx
 
 # Python
 __pycache__/
